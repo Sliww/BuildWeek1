@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+body {
+    background-image: url(Assets/bg.jpg);
+    background-size: cover;
+    color: white;
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 60px;
+}
+
+.logoepicode {
+    width: 130px;
+}
+
+h1 {
+    font-weight: normal;
+    margin-top: 90px;
+    margin-bottom: 45px;
+    font-size: 60px;
+    font-family: "Outfit", sans-serif;
+    line-height: 0.85;
+}
+
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: "Inter", sans-serif;
+}
+
+ul li {
+    list-style: inside;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+}
+
+.instrucsions {
+    color: #D20094;
+    font-size: 23px;
+    margin-bottom: 7px;
+}
+
+.check-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.check-btn label {
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+}
+
+#welcomeButton {
+    height: 60px;
+    width: 250px;
+    background-color: #00FFFF;
+    font-size: 23px;
+    font-weight: bold;
+    color: #0B0C37;
+    box-shadow: 0 0 15px 7px rgba(0, 255, 255, 0.75);
+    border: none;
+    cursor: pointer;
+}
+
+#promise {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    background: transparent;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #D20094;
+
+}
+
+/*
+SECONDO HTML
+*/
+
+.superiore {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid white;
+    width: 100%;
+}
+
+#timer {
+    border: 4px solid white;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+}
+
+main {
+    border: 1px solid white;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#questionContainer {
+    border: 1px solid white;
+    height: 230px;
+    width: 600px;
+}
+
+.inputContainer {
+    border: 1px solid white;
+    height: 180px;
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    
+}
+
+.spanContainer {
+    margin-top: 90px;
+}
+
+.spanContainer span {
+    margin: 2px;
+}
+
+.qst {
+    font-weight: bold;
+}
+
+.buttons {
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    border-bottom: 1px solid white;
+    width: 320px;
+    margin: auto;
+    height: 70px;
+    position: relative;
+    border-radius: 50px;
+    text-align: center;
+    
+}
+
+.buttons label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.buttons input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .buttons input[type="radio"] {
+    opacity: 0;
+    z-index: 100;
+  }
+
+  .buttons input[type="radio"]:checked + label {
+    background: #D20094;
+    border-radius: 4px;
+    border-radius: 50px;
+    opacity: 0.8;
+  }
+
+  .buttons label {
+    cursor: pointer;
+    z-index: 90;
+    line-height: 4em;
+  }
+
+
