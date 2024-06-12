@@ -99,14 +99,84 @@ const questions = [
 ];
 
 
-let welcomeButton = document.querySelector("#welcomeButton");
-let promise = document.querySelector("#promise");
+let counter = 60;
 
-
-
-welcomeButton.addEventListener("click", () => {
-
-  if (!promise.checked) {
-    welcomeButton.setAttribute("disabled", true);
+setInterval( function() {
+  counter--;
+  if (counter >= 0 ){
+    let id = document.querySelector("#countDown");
+    id.innerHTML = counter;
   }
+}, 1000);
+
+let labels = document.querySelectorAll(".answerLabel");
+  let questionNumber = 0;
+  let userScore = 0;
+  let inputButtons = document.querySelectorAll(".inputButtons");
+  let answers = "";
+  let arrayAnswers = [];
+  /*function printAnswers() {
+   
+   labels.forEach((label) => {
+    for(let i = 0; i < questions.length; i++) {
+    newCorrectAnswers = questions[i].correct_answer;
+    for(let i = 0; i < questions[i].incorrect_answers.length; i++){
+    newIncorrectAnswers = questions[i].incorrect_answers;
+   }
+   label.textContent = newCorrectAnswers + newIncorrectAnswers;
+
+
+    }
+     
+   })
+  } 
+*/
+/*questions.forEach((question) => {
+ newCorrectAnswers.push(question.correct_answer);
+ newIncorrectAnswers.push(question.incorrect_answers.join());
 })
+console.log(newCorrectAnswers);
+console.log(newIncorrectAnswers)
+  
+
+
+newCorrectAnswers.forEach((newCorrectAnswer) => {
+labels.forEach((label) => {
+ label.textContent = newCorrectAnswer;
+ 
+}) 
+ })
+*/
+
+
+function printAnswers() {
+
+
+
+    labels.forEach((label) => {
+     for(let i = 0; i < arrayAnswers.length; i++) {
+      answers = arrayAnswers[i];
+      label.textContent = answers;
+     }
+     
+   })
+
+
+
+
+
+   
+  
+ 
+  }
+ 
+inputButtons.forEach((inputButton) => {
+ inputButton.addEventListener("change", function(){
+  if(inputButton.checked) {
+   questionNumber++;
+   printAnswers();
+  }
+ })
+})
+
+

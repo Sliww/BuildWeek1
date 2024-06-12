@@ -14,25 +14,29 @@
             <div>
                 <img src="./Assets/epicode_logo.png" alt="Logo Epicode" class="logoepicode" />
             </div>
-            <div id="timer">tempo</div>
+            <div id="timer">
+                <span class="secs">SECONDS</span>
+                <span id="countDown">60</span>
+                <span class="remaining">Remaining</span>
+            </div>
         </div>
 
         <div id="questionContainer"></div>
         <div class="inputContainer">
             <div class="buttons">
-                <input type="radio" name="answer" id="check1">
+                <input type="radio" name="answer" id="check1" class="inputButtons">
                 <label for="check1" class="answerLabel">ciao</label>
             </div>
             <div class="buttons">
-                <input type="radio" name="answer" id="check2">
+                <input type="radio" name="answer" id="check2" class="inputButtons">
                 <label for="check2" class="answerLabel">ciao</label>
             </div>
             <div class="buttons">
-                <input type="radio" name="answer" id="check3">
+                <input type="radio" name="answer" id="check3" class="inputButtons">
                 <label for="check3" class="answerLabel">ciao</label>
             </div>
             <div class="buttons">
-                <input type="radio" name="answer" id="check4">
+                <input type="radio" name="answer" id="check4" class="inputButtons">
                 <label for="check4" class="answerLabel">ciao</label>
             </div>
         </div>
@@ -44,6 +48,8 @@
             <span class="qstTot">10</span>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

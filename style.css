@@ -77,6 +77,17 @@ ul li {
     font-size: 23px;
     font-weight: bold;
     color: #0B0C37;
+    border: none;
+    cursor: pointer;
+}
+
+#welcomeButton:hover {
+    height: 60px;
+    width: 250px;
+    background-color: #00FFFF;
+    font-size: 23px;
+    font-weight: bold;
+    color: #0B0C37;
     box-shadow: 0 0 15px 7px rgba(0, 255, 255, 0.75);
     border: none;
     cursor: pointer;
@@ -116,10 +127,28 @@ SECONDO HTML
 }
 
 #timer {
-    border: 4px solid white;
-    border-radius: 50%;
-    height: 90px;
+    border: 3px solid white;
     width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.secs {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.remaining {
+    font-size: 12px;
+}
+
+#countDown {
+    font-family: "Outfit", sans-serif;
+    font-size: 25px;
 }
 
 main {
@@ -155,6 +184,10 @@ main {
 
 .qst {
     font-weight: bold;
+}
+
+.qstTot {
+    color: #D20094;
 }
 
 .buttons {
