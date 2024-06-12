@@ -98,85 +98,88 @@ const questions = [
   },
 ];
 
-
+// TIMER
 let counter = 60;
 
-setInterval( function() {
+setInterval(function () {
   counter--;
-  if (counter >= 0 ){
+  if (counter >= 0) {
     let id = document.querySelector("#countDown");
     id.innerHTML = counter;
   }
 }, 1000);
 
+
+//
 let labels = document.querySelectorAll(".answerLabel");
-  let questionNumber = 0;
-  let userScore = 0;
-  let inputButtons = document.querySelectorAll(".inputButtons");
-  let answers = "";
-  let arrayAnswers = [];
-  /*function printAnswers() {
-   
-   labels.forEach((label) => {
-    for(let i = 0; i < questions.length; i++) {
-    newCorrectAnswers = questions[i].correct_answer;
-    for(let i = 0; i < questions[i].incorrect_answers.length; i++){
-    newIncorrectAnswers = questions[i].incorrect_answers;
-   }
-   label.textContent = newCorrectAnswers + newIncorrectAnswers;
+let inputButtons = document.querySelectorAll(".inputButtons");
+let answers = "";
+let arrayAnswers = [];
+let questionNumber = 0;
+let userScore = 0;
 
 
-    }
-     
-   })
-  } 
-*/
-/*questions.forEach((question) => {
- newCorrectAnswers.push(question.correct_answer);
- newIncorrectAnswers.push(question.incorrect_answers.join());
-})
-console.log(newCorrectAnswers);
-console.log(newIncorrectAnswers)
-  
 
 
-newCorrectAnswers.forEach((newCorrectAnswer) => {
-labels.forEach((label) => {
- label.textContent = newCorrectAnswer;
- 
-}) 
- })
-*/
+
+// PASSI DA FARE 
+
+// COSTRUIRE LA FUNZIONE PRINTQUESTIONS per la stampa della domanda corrente e le risposte
+// dentro la funzione il 1° if sarà un  semplice if che se la lunghezza dell'array questions viene
+//   superata il quiz è finito e vengono stampati i risultati e questo if deve anche avere un settaggio 
+//   che fa fermare il SET INTERVAL e si chiama CLEAR INTERVAL ovvero fa fermare l'esecuzione della funzione ogni 60 secondi.
+// Poi la stampa delle domande nelle label con il rispettivo aggiornamento di ognuna ad ogni indice
+// E l'avvio del timer di nuovo a ogni domanda quindi dentro la funzione oltre che fuori dovremo dichiarare il counter a 60 
+//   così ricomincia da 60 e di conseguenza dobbiamo ...
+// Crearci la funzione che resetta il TIMER allo scadere del tempo che richiameremo nel punto che ho scritto sopra 
+// E gli add event listener sui ogni bottone con il FOREACH come hai gia fatto tu antonietta che al click rispara la funzione incrementando il question number
+// e da non scordare di avere un punteggio per l'utente che viene incrementato quando l'utente clicca sul bottone con la domanda corretta 
+// (penso che si potrebbe settare un input.value = correct_answer o una cosa del genere però non so)
+
+
+
+//PUSH DELLE RISPOSTE IN 1 ARRAY UNICO
+let answersArray = [];
+answersArray = questions.flatMap((question) =>
+  [question.correct_answer, ...question.incorrect_answers]
+);
+
+console.log(answersArray);
+
+
+// FUNZIONE SHUFFLE
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
+let shuffledArray = shuffleArray(answersArray);
+
 
 
 function printAnswers() {
-
-
-
-    labels.forEach((label) => {
-     for(let i = 0; i < arrayAnswers.length; i++) {
-      answers = arrayAnswers[i];
+  labels.forEach((label) => {
+    for (let i = 0; i < shuffledArray.length; i++) {
+      shuffledArray = shuffledArray[i];
       label.textContent = answers;
-     }
-     
-   })
+    }
 
+  })
+};
 
-
-
-
-   
-  
- 
-  }
- 
 inputButtons.forEach((inputButton) => {
- inputButton.addEventListener("change", function(){
-  if(inputButton.checked) {
-   questionNumber++;
-   printAnswers();
-  }
- })
-})
+  inputButton.addEventListener("change", function () {
+    if (inputButton.checked) {
+      questionNumber++;
+      printAnswers();
+    }
+  })
+});
 
 
