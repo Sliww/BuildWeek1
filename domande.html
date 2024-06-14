@@ -16,28 +16,28 @@
             </div>
             <div id="timer">
                 <span class="secs">SECONDS</span>
-                <span id="countDown">60</span>
+                <span id="countDown"></span>
                 <span class="remaining">Remaining</span>
             </div>
         </div>
 
         <div id="questionContainer"></div>
         <div class="inputContainer">
-            <div class="buttons">
+            <div class="buttons" id="button1">
                 <input type="radio" name="answer" id="check1" class="inputButtons">
-                <label for="check1" class="answerLabel">ciao</label>
+                <label for="check1" class="answerLabel"></label>
             </div>
-            <div class="buttons">
+            <div class="buttons" id="button2">
                 <input type="radio" name="answer" id="check2" class="inputButtons">
-                <label for="check2" class="answerLabel">ciao</label>
+                <label for="check2" class="answerLabel"></label>
             </div>
-            <div class="buttons">
+            <div class="buttons" id="button3">
                 <input type="radio" name="answer" id="check3" class="inputButtons">
-                <label for="check3" class="answerLabel">ciao</label>
+                <label for="check3" class="answerLabel"></label>
             </div>
-            <div class="buttons">
+            <div class="buttons" id="button4">
                 <input type="radio" name="answer" id="check4" class="inputButtons">
-                <label for="check4" class="answerLabel">ciao</label>
+                <label for="check4" class="answerLabel"></label>
             </div>
         </div>
 
@@ -46,6 +46,10 @@
             <span id="questionNumber">1</span>
             <span class="qstTot">/</span>
             <span class="qstTot">10</span>
+        </div>
+
+        <div id="scoreResults" class="hiddenInput">
+            <span id="scoreResultsSpan" class="hiddenInput">Hai totalizzato 10 punti</span>
         </div>
     </main>
 

@@ -122,7 +122,6 @@ SECONDO HTML
 .superiore {
     display: flex;
     justify-content: space-between;
-    border: 1px solid white;
     width: 100%;
 }
 
@@ -135,6 +134,8 @@ SECONDO HTML
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+
 }
 
 .secs {
@@ -152,7 +153,6 @@ SECONDO HTML
 }
 
 main {
-    border: 1px solid white;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -160,18 +160,24 @@ main {
 }
 
 #questionContainer {
-    border: 1px solid white;
     height: 230px;
-    width: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#questionContainer span {
+    font-size: 33px;
 }
 
 .inputContainer {
-    border: 1px solid white;
     height: 180px;
     width: 700px;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    
 }
 
 .spanContainer {
@@ -184,10 +190,6 @@ main {
 
 .qst {
     font-weight: bold;
-}
-
-.qstTot {
-    color: #D20094;
 }
 
 .buttons {
@@ -235,6 +237,10 @@ main {
     opacity: 0.8;
   }
 
+  .buttons:hover {
+    background: #D20094;
+  }
+
   .buttons label {
     cursor: pointer;
     z-index: 90;
@@ -242,3 +248,29 @@ main {
   }
 
 
+.hiddenInput {
+    display: none !important;
+}
+.printedQuestion {
+    padding-top: 30px;
+    font-size: 60px;
+    font-weight: bold;
+    width: 700px;
+    height: 200px;
+    color: white;
+}
+
+#scoreResults {
+    width: 800px;
+    height: 500px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+#scoreResults span {
+    font-size: 50px;
+}
