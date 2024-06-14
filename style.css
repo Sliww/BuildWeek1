@@ -91,6 +91,8 @@ ul li {
     box-shadow: 0 0 15px 7px rgba(0, 255, 255, 0.75);
     border: none;
     cursor: pointer;
+
+    /*#6bffff*/
 }
 
 #promise {
@@ -203,7 +205,6 @@ main {
     position: relative;
     border-radius: 50px;
     text-align: center;
-    
 }
 
 .buttons label {
@@ -223,6 +224,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
+    cursor: pointer;
   }
 
   .buttons input[type="radio"] {
